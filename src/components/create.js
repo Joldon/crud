@@ -1,14 +1,17 @@
-import React, {useState} from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import React, {useState} from 'react';
+import { Button, Checkbox, Form } from 'semantic-ui-react';
+import axios from 'axios';
 
 function Create() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [checkbox, setCheckbox] = useState(false);
     const postData = () => {
-        console.log(firstName)
-        console.log(lastName)
-        console.log(checkbox)
+        axios.post(`https://610b0bee52d56400176b00c8.mockapi.io/CrudDB`, {
+        firstName,
+        lastName,
+        checkbox
+    })
     }
     return (
   <Form className='create-form'>

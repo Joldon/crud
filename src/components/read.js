@@ -2,7 +2,7 @@ import { anyTypeAnnotation, throwStatement } from '@babel/types';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Table, Button } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const Read = () => {
     const [APIData, setAPIData] = useState([]);
@@ -36,9 +36,7 @@ const Read = () => {
                     <Table.Cell>{data.lastName}</Table.Cell>
                     <Table.Cell>{data.checkbox ? 'Checked' : 'Unchecked'}</Table.Cell>
                     <Table.HeaderCell>Update</Table.HeaderCell>
-                    <Link to='/update'><Table.Cell> 
-                    <Button onClick={() => setData(data)}>Update</Button>
-                    </Table.Cell></Link>
+                    <Table.HeaderCell>Update</Table.HeaderCell>
                 </Table.Row>
                 )})}
             </Table.Body>
